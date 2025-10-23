@@ -1,25 +1,36 @@
-# 이미지변환기 프로젝트 Task 목록
+# 이미지변환기 프로젝트 - 전체 작업 목록
 
 > **프로젝트 시작일**: 2025-10-23
 > **목표**: WebP/AVIF 이미지 변환기 개발 및 SaaS 서비스 런칭
+> **최종 업데이트**: 2025-10-23
+
+## 📊 전체 진행률: 11% (2/18 작업 완료)
+
+### 진행 상황 범례
+- `[ ]` TODO: 대기 중
+- `[~]` IN_PROGRESS: 진행 중
+- `[x]` DONE: 완료
+- `[!]` BLOCKED: 차단됨
 
 ---
 
-## 📌 Task 1: GitHub 저장소 생성 및 프로젝트 연동
+## 📌 Task 1: GitHub 저장소 생성 및 프로젝트 연동 [~]
 **우선순위**: 🔴 최우선
 **예상 소요 시간**: 30분
 **담당자**: 개발팀
+**시작일**: 2025-10-23
+**상태**: 진행 중 (기본 연동 완료, Secrets 설정 대기)
 
 ### 세부 작업
-- [ ] GitHub에서 새 Private Repository 생성
-  - Repository 이름: `image-converter`
-  - 설명: "WebP/AVIF 이미지 변환기 - 데스크톱 앱"
-  - Private으로 설정 (필수)
-- [ ] 로컬 프로젝트와 GitHub 연동
-  ```bash
-  git init
-  git remote add origin https://github.com/[username]/image-converter.git
-  ```
+- [x] GitHub에서 새 Private Repository 생성
+  - Repository URL: https://github.com/thekadang/cloudeimage.git
+  - Private 설정 완료
+  - 완료일: 2025-10-23
+- [x] 로컬 프로젝트와 GitHub 연동
+  - `git init` 실행 완료
+  - `git remote add origin` 완료
+  - 첫 커밋 및 푸시 완료 (커밋 해시: 68488f1)
+  - 완료일: 2025-10-23
 - [ ] 브랜치 보호 규칙 설정
   - main 브랜치 보호 활성화
   - PR 리뷰 필수 설정
@@ -34,38 +45,52 @@
   - `APPLE_CERTIFICATE` (macOS 서명용)
 
 ### 완료 기준
-- GitHub Repository 생성 완료
-- 로컬과 GitHub 연동 완료
-- GitHub Secrets 설정 완료
-- 브랜치 보호 규칙 적용 완료
+- [x] GitHub Repository 생성 완료
+- [x] 로컬과 GitHub 연동 완료
+- [ ] GitHub Secrets 설정 완료
+- [ ] 브랜치 보호 규칙 적용 완료
 
 ---
 
-## 📌 Task 2: .gitignore 파일 생성 및 보안 설정
+## 📌 Task 2: .gitignore 파일 생성 및 보안 설정 [x]
 **우선순위**: 🔴 최우선
 **예상 소요 시간**: 20분
 **담당자**: 개발팀
 **참조 문서**: `01_보안_가이드라인.md`
+**시작일**: 2025-10-23
+**완료일**: 2025-10-23
+**상태**: 완료
 
 ### 세부 작업
-- [ ] `.gitignore` 파일 생성
+- [x] `.gitignore` 파일 생성
   - 보안 관련 파일들 (*.key, *.pem, secrets.py, .env* 등)
   - 사용자 데이터 및 로그 (user_data/, logs/, temp/, cache/)
   - 빌드 결과물 (dist/, build/, *.exe)
   - 개발 환경 파일 (__pycache__/, .vscode/, .idea/)
-- [ ] `.env.example` 템플릿 파일 생성
+  - 완료일: 2025-10-23
+- [x] `.env.example` 템플릿 파일 생성
   - 실제 값 없이 변수명만 포함
   - GitHub에 업로드 가능
-- [ ] 보안 검증 스크립트 설치
-  - `security_check.py` 생성
-  - `setup_git_hooks.py` 생성
-  - Git Hooks 자동 설정 스크립트 생성
+  - 완료일: 2025-10-23
+- [x] 보안 검증 스크립트 설치
+  - `security_check.py` 생성 완료
+  - `setup_git_hooks.py` 생성 완료
+  - Git Hooks 자동 설정 완료
+  - pre-commit hook 정상 동작 확인
+  - 완료일: 2025-10-23
 
 ### 완료 기준
-- `.gitignore` 파일 생성 및 모든 보안 항목 포함
-- `.env.example` 생성 완료
-- 보안 검증 스크립트 동작 확인
-- Git Hooks 자동 설치 완료
+- [x] `.gitignore` 파일 생성 및 모든 보안 항목 포함
+- [x] `.env.example` 생성 완료
+- [x] 보안 검증 스크립트 동작 확인
+- [x] Git Hooks 자동 설치 완료
+
+### 결과물
+- `.gitignore` (보안 중심 제외 목록)
+- `.env.example` (환경 변수 템플릿)
+- `security_check.py` (보안 검증 스크립트)
+- `setup_git_hooks.py` (Git Hooks 설치 스크립트)
+- `.git/hooks/pre-commit` (자동 보안 검사)
 
 ---
 
@@ -587,10 +612,20 @@
 
 ## 📊 진행 상황 추적
 
-- **전체 진행률**: 0%
-- **완료된 Task**: 0 / 18
-- **진행 중인 Task**: 0
-- **대기 중인 Task**: 18
+- **전체 진행률**: 11% (1.5 / 18 작업)
+- **완료된 Task**: 1 / 18 (Task 2)
+- **진행 중인 Task**: 1 (Task 1 - 50% 완료)
+- **대기 중인 Task**: 16
+
+### 마일스톤별 진행률
+- **M1: 프로젝트 초기 설정** - 50% (Task 1~2 중 1.5개 완료)
+- **M2: 핵심 기능 개발** - 0%
+- **M3: 백엔드 구축** - 0%
+- **M4: 패키징 및 배포 준비** - 0%
+- **M5: 테스트 및 QA** - 0%
+- **M6: 베타 테스트** - 0%
+- **M7: 정식 출시** - 0%
+- **M8: 운영 및 최적화** - 0%
 
 ---
 
@@ -599,7 +634,10 @@
 | 날짜 | 변경 내용 | 담당자 |
 |------|----------|--------|
 | 2025-10-23 | 초기 Task 목록 작성 | Claude |
-|  |  |  |
+| 2025-10-23 | Task 1 부분 완료 (GitHub 연동) | Claude |
+| 2025-10-23 | Task 2 완료 (보안 설정) | Claude |
+| 2025-10-23 | task.md 개선 (체크박스, 진행률, 상태 추적) | Claude |
+| 2025-10-23 | .claude/CLAUDE.md 추가 (프로젝트 메타 가이드) | Claude |
 
 ---
 
